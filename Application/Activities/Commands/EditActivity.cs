@@ -18,8 +18,7 @@ public class EditActivity
             var activity = await context.Activities.FindAsync([request.Activity.Id], cancellationToken)
             ?? throw new Exception("Cannot find activity");
 
-            mapper.Map(request.Activity, activity);// For some reason not working
-            context.Entry(activity).CurrentValues.SetValues(request.Activity);
+            mapper.Map(request.Activity, activity);
             await context.SaveChangesAsync(cancellationToken);
         }
     }
