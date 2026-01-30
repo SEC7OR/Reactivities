@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Chip, Divider, Grid2, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Button, Chip, Divider, Grid, Paper, Stack, Typography } from "@mui/material";
 
 type Props = {
     profile: Profile
@@ -8,8 +8,8 @@ export default function ProfileHeader({ profile }: Props) {
     const isFollowing = true;
     return (
         <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
-            <Grid2 container spacing={2}>
-                <Grid2 size={8}>
+            <Grid container spacing={2}>
+                <Grid size={8}>
                     <Stack direction='row' spacing={3} alignItems='center'>
                         <Avatar
                             src={profile.imageUrl}
@@ -21,8 +21,8 @@ export default function ProfileHeader({ profile }: Props) {
                             {isFollowing && <Chip variant="outlined" color="secondary" label='Following' />}
                         </Box>
                     </Stack>
-                </Grid2>
-                <Grid2 size={4}>
+                </Grid>
+                <Grid size={4}>
                     <Stack spacing={2} alignItems="center">
                         <Box display='flex' justifyContent='space-around' width='100%'>
                             <Box textAlign='center'>
@@ -43,8 +43,8 @@ export default function ProfileHeader({ profile }: Props) {
                             {isFollowing ? 'Unfollow' : 'Follow'}
                         </Button>
                     </Stack>
-                </Grid2>
-            </Grid2>
+                </Grid>
+            </Grid>
         </Paper>
     )
 }
