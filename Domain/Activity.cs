@@ -19,5 +19,6 @@ public class Activity
     //navigation properties
 
     public IList<ActivityAttendee> Attendees { get; set; } = [];
+    public ICollection <Comment> Comments { get; set; } = [];
 
 }
